@@ -18,16 +18,16 @@ const main = async () => {
 
     const res = await fetch(baseUrl)
     const versionRaw = await res.text()
-    const version = parseInt(versionRaw);
+    const baseVersion = parseInt(versionRaw);
 
     console.log("Comparing", {
         baseSha,
         headSha,
-        targetVersion: version,
+        baseVersion: baseVersion,
         localVersion: localVersion,
     })
 
-    if (version <= localVersion) {
+    if (localVersion <= baseVersion) {
         throw new Error("Version mismatch: Expected version to be higher.")
     }
 }
