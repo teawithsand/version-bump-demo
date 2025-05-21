@@ -1,1 +1,3 @@
 PR adds me, but does not bump version
+
+This PR edits me too and bumps version
