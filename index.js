@@ -11,7 +11,7 @@ const main = async () => {
     const baseSha = github.context.payload.pull_request.base.sha;
     const headSha = github.context.payload.pull_request.head.sha;
 
-    const baseUrl = `https://raw.githubusercontent.com/${ github.context.repo.owner }/${ github.context.repo.repo }/${ baseSha }/${ packageJsonPath }`
+    const baseUrl = `https://raw.githubusercontent.com/${ github.context.repo.owner }/${ github.context.repo.repo }/${ baseSha }/version.txt`
 
     const localVersionRaw = fs.readFileSync(`${ process.env.GITHUB_WORKSPACE }/version.txt`)
     const localVersion = parseInt(localVersionRaw);
