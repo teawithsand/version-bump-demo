@@ -16,7 +16,7 @@ const main = async () => {
     const localVersionRaw = fs.readFileSync(`${ process.env.GITHUB_WORKSPACE }/version.txt`)
     const localVersion = parseInt(localVersionRaw);
 
-    const res = await fetch(baseUrl, { headers })
+    const res = await fetch(baseUrl)
     const versionRaw = await res.text()
     const version = parseInt(versionRaw);
 
